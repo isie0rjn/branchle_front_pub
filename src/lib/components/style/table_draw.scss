@@ -1,0 +1,108 @@
+#table *, #buttons * {
+
+
+    color: black;
+}
+
+
+#table {
+    .col-element {
+        box-sizing: border-box;
+        border: 0;
+        border-bottom: 1px solid rgb(227, 227, 227);
+        width: 100%;
+        font-size:small;
+
+        input {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    
+
+    input:focus {
+        outline: none;
+    }
+}
+
+
+#numbers-container{ 
+    background-color: white;
+    position: relative;
+    width: fit-content;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+.col-resize-handle {
+    width: 4px;
+    height:inherit;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: col-resize;
+}
+
+
+
+@media (max-width: 600px) {
+    .col-resize-handle {
+        display: none;
+    }
+  }
+
+
+.col-element {
+    height: 30px;
+    cursor: pointer;
+}
+.col-top {
+    background-color: rgb(245, 245, 245);
+    height: 30px;
+    width: 100px;
+    border-bottom: 1px solid rgb(227, 227, 227);
+    min-width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.numbers-top {
+    width: 50px;
+    box-sizing: border-box;
+}
+
+.numbers {
+    background-color: rgb(245, 245, 245);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 5px;
+}
+
+.column {
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+
+#table {
+    display: flex;
+}
+
+.active {
+    border: 3px solid rgb(80, 229, 80) !important;
+    box-sizing: border-box;
+}
+
+.active-col > * {
+    background-color: rgb(213, 255, 216);
+}
+
+.active-col > .active {
+    background-color: rgb(233, 249, 234);
+}

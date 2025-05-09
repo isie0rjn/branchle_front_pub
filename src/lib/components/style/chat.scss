@@ -1,0 +1,194 @@
+.all-chat-container {
+    border: 2px solid black;
+    width: 400px;
+    height: 500px;
+    max-height: 500px;
+    border-radius: 4px;
+    padding-bottom: 2px;
+    min-height: 0;
+    background-color: white;
+
+
+    * {
+        color: black;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        height: 10%;
+        align-items: center;
+        user-select: none;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none;    /* Firefox */
+        -ms-user-select: none;  
+
+
+        .img-name {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img {
+                height: 100%;
+            }
+
+            h2 {
+                color: black;
+                font-size: large;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                strong {
+                    color: green;
+                    font-size: 50px;
+                }
+            }
+        }
+
+        #close {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
+
+        #close:hover {
+            cursor: pointer;
+        }
+    }
+
+    hr {
+        margin: 0;
+    }
+
+    .chat-container {
+        min-height: 0;
+        height: 80%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        justify-content: end;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        
+
+
+        .chat-container-internal {
+            min-height: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            
+
+
+
+            .user {
+                text-align: right;
+                align-self: flex-end;
+                word-wrap: break-word;
+                max-width: 80%;
+                background-color: #d8e2dc;
+                padding: 20px;
+                border-radius: 9px 9px 0px 9px;
+                color: black;
+    
+            }
+        
+            .assistant {
+                word-wrap: break-word;
+                max-width: 80%;
+                background-color: rgb(240, 240, 240);
+                padding: 20px;
+                border-radius: 9px 9px 9px 0;
+                color: black;
+    
+    
+    
+                h1 {
+                    font-size: large;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+            }
+    
+            .assistant * {
+                color: black;
+            }
+        
+            table {
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                
+            }
+        
+            th {
+                border: 2px solid black;
+                margin: 0;
+                padding: 10px;
+            }
+        
+            td {
+                padding: 10px;
+                border: 1px solid black;
+                margin: 0;
+                width: max-content;
+            }
+        }
+        
+    
+        
+    
+        
+    
+        
+    }
+
+    form {
+        height: 10%;
+        input {
+            box-sizing: border-box;
+            height: 100%;
+            font-size: large;
+            font-weight: 200;
+            width: 100%;
+            position: static;
+            padding-block: 0;
+            padding-inline: 10px;
+            border-bottom: 0;
+            border-left: 0;
+            border-right: 0;
+            color: black;
+        }
+    
+        input:focus {
+            outline: none;
+        }
+    }
+    
+}
+
+#open-chat {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: #d8e2dc;
+    border: 3px dashed white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+
+    img {
+        width: 100%;
+        height: 100%;
+        transform: rotate(180deg);
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="table">
+        <div id="numbers-container">
+            <div class="col-top numbers-top"></div>
+        </div>
+    </div>
+    
+
+    <button id="add_row">+</button>
+
+    <input type="text" id="current-tile" value="">
+
+    <script src="initial.js"></script>
+    <script src="active.js"></script>
+
+    <script>
+        
+
+        function handleMouseUp_top(event) {
+            const resizeHandle = event.target; 
+            const parentDiv = resizeHandle.closest('.col-top'); 
+            
+            init_top(resizeHandle, parentDiv);
+        }
+
+        function init_top(handle, rectangle) {
+            console.log("OK");
+
+            if (!rectangle || !handle) {
+                console.error('Element(s) not found');
+                return;
+            }
+
+            // Handle for touch and mouse events
+            const startResize = (event) => {
+                event.preventDefault();
+
+                const initialWidth = rectangle.offsetWidth;
+                const startX = event.touches ? event.touches[0].clientX : event.clientX;
+
+                // Function to move (resize) the element horizontally
+                const onMove = (e) => {
+                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    const newWidth = initialWidth + (clientX - startX);
+                    rectangle.style.width = newWidth + 'px';
+                };
+
+                // Function to stop resizing
+                const stopResize = () => {
+                    window.removeEventListener('mousemove', onMove);
+                    window.removeEventListener('mouseup', stopResize);
+                    window.removeEventListener('touchmove', onMove);
+                    window.removeEventListener('touchend', stopResize);
+                    console.log("removed");
+                };
+
+                window.addEventListener('mousemove', onMove);
+                window.addEventListener('mouseup', stopResize);
+                window.addEventListener('touchmove', onMove, { passive: false });
+                window.addEventListener('touchend', stopResize);
+            };
+
+            handle.addEventListener('mousedown', startResize);
+            handle.addEventListener('touchstart', startResize, { passive: false });
+        }
+
+    </script>
+</body>
+</html>

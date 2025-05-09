@@ -1,0 +1,17 @@
+.table-thumbnail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    
+    
+
+    .table-thumbnail {
+        background-color: #d8e2dc;
+        border: 3px dashed white;
+        padding: 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #463f3a;
+    }
+}
