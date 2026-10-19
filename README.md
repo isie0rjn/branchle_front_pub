@@ -1,38 +1,85 @@
-# sv
+# Branchle Frontend
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The frontend application for **Branchle**, built with [SvelteKit](https://svelte.dev/docs/kit) and [Vite](https://vite.dev/).
 
-## Creating a project
+## Requirements
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Node.js](https://nodejs.org/) 18 or newer
+- npm
+
+## Getting started
+
+Clone the repository and install the dependencies:
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+git clone https://github.com/isie0rjn/branchle_front_pub.git
+cd branchle_front_pub
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start the development server:
 
 ```bash
 npm run dev
+```
 
-# or start the server and open the app in a new browser tab
+To start the server and open the application in your browser automatically:
+
+```bash
 npm run dev -- --open
 ```
 
-## Building
+The local development server is typically available at [http://localhost:5173](http://localhost:5173).
 
-To create a production version of your app:
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run dev -- --open` | Start the development server and open it in a browser |
+| `npm run check` | Run Svelte and TypeScript checks |
+| `npm run check:watch` | Run checks continuously while files change |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build locally |
+| `npm run prepare` | Synchronize SvelteKit-generated files |
+
+## Production build
+
+Create an optimized production build with:
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview the generated build locally with:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+npm run preview
+```
+
+This project uses `@sveltejs/adapter-auto`. For deployment to a specific hosting provider, configure the appropriate [SvelteKit adapter](https://svelte.dev/docs/kit/adapters).
+
+## Development checks
+
+Before opening a pull request, run the project checks:
+
+```bash
+npm run check
+npm run build
+```
+
+## Project structure
+
+The main application code is located in `src/`. SvelteKit routes are generally organized under `src/routes/`, while reusable components and utilities can be placed under `src/lib/`.
+
+## Contributing
+
+1. Create a branch for your changes.
+2. Install dependencies with `npm install`.
+3. Make your changes and run `npm run check`.
+4. Confirm that `npm run build` succeeds.
+5. Open a pull request with a clear description of your changes.
+
+## License
+
+No license has been specified yet. Add a `LICENSE` file and update this section when a license is chosen.
